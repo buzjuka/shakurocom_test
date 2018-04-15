@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: <%= ENV['PG_USERNAME'] || 'shakurocom_test' %>
+  password: <%= ENV['PG_PASSWORD'] || 'shakurocom_test' %>
+  host: <%= ENV['PG_HOST'] || 'localhost' %>
+  port: <%= ENV['PG_PORT'] || 5432 %>
+  pool: <%= ENV['RAILS_MAX_THREADS'] || 5 %>
+
+development:
+  <<: *default
+  database: <%= ENV['PG_DATABASE'] || 'shakurocom_test_development' %>
+
+test:
+  <<: *default
+  database: <%= ENV['PG_DATABASE'] || 'shakurocom_test_test' %>
+
+production:
+  <<: *default
+  database: <%= ENV['PG_DATABASE'] || 'shakurocom_test_production' %>
+  username: <%= ENV['PG_USERNAME'] %>
+  password: <%= ENV['PG_PASSWORD'] %>
