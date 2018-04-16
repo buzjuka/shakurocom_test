@@ -1,0 +1,8 @@
+en:
+  activemodel:
+    errors:
+      models:
+        book_selling_form:
+          attributes:
+            amount:
+              luck_of_stock: You do not have enough stock
